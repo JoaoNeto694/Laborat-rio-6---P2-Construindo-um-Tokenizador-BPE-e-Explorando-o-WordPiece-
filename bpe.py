@@ -1,4 +1,5 @@
 import re
+from transformers import AutoTokenizer
 
 # Tarefa 1: O Motor de Frequências
 vocab = {
@@ -44,3 +45,14 @@ for i in range(5):
     vocab = merge_vocab(best_pair, vocab)
     print(f"Iteração {i + 1}: par fundido = {best_pair}")
     print(f"  vocab = {vocab}")
+
+
+
+# Tarefa 3: Integração Industrial e WordPiece
+tokenizer = AutoTokenizer.from_pretrained("bert-base-multilingual-cased")
+ 
+frase = "Os hiper-parâmetros do transformer são inconstitucionalmente difíceis de ajustar."
+tokens = tokenizer.tokenize(frase)
+ 
+print(f"Frase: {frase}")
+print(f"Tokens: {tokens}")
